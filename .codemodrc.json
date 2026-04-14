@@ -5,6 +5,6 @@
   "engine": "jscodeshift",
   "meta": {
     "tags": ["ethers", "web3", "migration", "javascript", "typescript"],
-    "git": "https://github.com/YOUR_USERNAME/ethers-v5-to-v6"
+    "git": "https://github.com/softalpha0/EtherMod"
   }
 }
