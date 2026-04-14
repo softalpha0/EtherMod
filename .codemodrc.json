@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "ethers/v5-to-v6",
+  "displayName": "EtherMod",
+  "engine": "jscodeshift",
+  "meta": {
+    "tags": ["ethers", "web3", "migration", "javascript", "typescript"],
+    "git": "https://github.com/YOUR_USERNAME/ethers-v5-to-v6"
+  }
+}
