@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/codemod/codemod/refs/heads/main/schemas/workflow.json
+
+version: "1"
+
+nodes:
+  - id: run-ethermod
+    name: "Apply EtherMod transforms (ethers v5 → v6)"
+    type: automatic
+    steps:
+      - name: "Run jscodeshift transforms"
+        run: |
+          npx jscodeshift \
+            --parser=tsx \
+            --extensions=js,jsx,ts,tsx \
+            -t $CODEMOD_PATH/dist/index.js \
+            $CODEMOD_TARGET
