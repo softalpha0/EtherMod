@@ -1,0 +1,22 @@
+{
+  "name": "solana-web3-to-kit",
+  "version": "1.0.0",
+  "description": "EtherMod — automated codemod to migrate @solana/web3.js v1 to @solana/kit",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": ["codemod", "solana", "web3", "migration", "kit"],
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/jscodeshift": "^17.3.0",
+    "@types/node": "^22.0.0",
+    "jscodeshift": "^17.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2",
+    "vitest": "^2.1.9"
+  }
+}
