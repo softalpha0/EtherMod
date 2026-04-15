@@ -1,29 +1,16 @@
 {
   "name": "ethermod",
   "version": "1.1.0",
-  "description": "EtherMod — automated codemod recipe to migrate from ethers.js v5 to v6",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "vitest run",
-    "test:watch": "vitest"
-  },
-  "keywords": [
-    "codemod",
-    "ethers",
-    "migration",
-    "ethers-v5",
-    "ethers-v6"
+  "description": "EtherMod — automated Web3 JS/TS migration toolkit covering ethers.js, wagmi, and @solana/web3.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "author": "",
-  "license": "MIT",
-  "type": "commonjs",
-  "devDependencies": {
-    "@types/jscodeshift": "^17.3.0",
-    "@types/node": "^25.6.0",
-    "jscodeshift": "^17.3.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^6.0.2",
-    "vitest": "^2.1.9"
-  }
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "publish:all": "npm run publish --workspaces"
+  },
+  "keywords": ["codemod", "web3", "migration", "ethers", "wagmi", "solana"],
+  "license": "MIT"
 }
