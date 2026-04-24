@@ -1,6 +1,6 @@
 schema_version: "1.0"
 name: "ethers-v5-to-v6"
-version: "1.3.0"
+version: "1.4.0"
 description: "EtherMod — automatically migrate ethers.js v5 to v6. Handles utils/providers namespace flattening, BigNumber → bigint, Web3Provider → BrowserProvider, and import cleanup."
 author: "softalpha0 <softonchain@gmail.com>"
 license: "MIT"

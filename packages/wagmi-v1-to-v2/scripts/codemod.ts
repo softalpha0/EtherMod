@@ -19,23 +19,23 @@ const codemod: Codemod<TSX> = (root) => {
 
   // 1. Hook renames
   for (const [oldName, newName] of Object.entries(HOOK_RENAMES)) {
-    rootNode.findAll({ pattern: oldName }).forEach((node) => {
+    rootNode.findAll(oldName).forEach((node) => {
       edits.push(node.replace(newName));
     });
   }
 
   // 2. WagmiConfig → WagmiProvider
-  rootNode.findAll({ pattern: "WagmiConfig" }).forEach((node) => {
+  rootNode.findAll("WagmiConfig").forEach((node) => {
     edits.push(node.replace("WagmiProvider"));
   });
 
   // 3. createClient → createConfig
-  rootNode.findAll({ pattern: "createClient" }).forEach((node) => {
+  rootNode.findAll("createClient").forEach((node) => {
     edits.push(node.replace("createConfig"));
   });
 
   // 4. configureChains($$$ARGS) → comment
-  rootNode.findAll({ pattern: "configureChains($$$ARGS)" }).forEach((node) => {
+  rootNode.findAll("configureChains($$$ARGS)").forEach((node) => {
     edits.push(
       node.replace(
         "/* configureChains removed in wagmi v2 — configure chains in createConfig instead */"
@@ -43,14 +43,14 @@ const codemod: Codemod<TSX> = (root) => {
     );
   });
 
-  // 5. Remove wagmi/providers/* import sources
+  // 5. wagmi/providers/* → wagmi
   const wagmiProviders = [
     "wagmi/providers/public",
     "wagmi/providers/alchemy",
     "wagmi/providers/infura",
   ];
   for (const src of wagmiProviders) {
-    rootNode.findAll({ pattern: `"${src}"` }).forEach((node) => {
+    rootNode.findAll(`"${src}"`).forEach((node) => {
       edits.push(node.replace('"wagmi"'));
     });
   }
