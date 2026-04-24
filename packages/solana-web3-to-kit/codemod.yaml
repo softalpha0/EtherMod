@@ -1,6 +1,6 @@
 schema_version: "1.0"
 name: "solana-web3-to-kit"
-version: "1.0.0"
+version: "1.1.0"
 description: "EtherMod — automatically migrate @solana/web3.js v1 to @solana/kit. Handles package rename, Connection/PublicKey/Keypair API changes, and RPC method updates."
 author: "softalpha0 <softonchain@gmail.com>"
 license: "MIT"
